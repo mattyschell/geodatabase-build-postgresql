@@ -8,4 +8,7 @@ else
    database=$1
 fi
 psql -t -c "drop database $database;"
+if [ $PGHOST = 'localhost' ]; then
+	psql -t -c "drop user azure_pg_admin;"
+fi
 psql -t -c "drop user sde;"

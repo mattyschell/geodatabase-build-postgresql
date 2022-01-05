@@ -1,6 +1,6 @@
 # geodatabase-build-postgresql
 
-We will create an ESRI Enterprise Geodatabase on PostgreSQL. Friends, this our ESRI Enterprise Geodatabase PostgreSQL, our rules, the trick is never to be afraid.
+We will create an ESRI Enterprise Geodatabase on PostgreSQL. Friends, this our ESRI Enterprise Geodatabase on PostgreSQL, our rules, the trick is never to be afraid.
 
 ## Tasks
 
@@ -30,14 +30,13 @@ Test that we are ready for geodatabase creation.
 $ export PGDATABASE=devtestdb
 $ export PGUSER=adminuser@host
 $ export PGPASSWORD=PostGisIsMyDatabae!
-$ ./src/test/run-all-tests.sh 
+$ ./src/test/run-db-tests.sh 
 ```
 
 ## Set up Geodatabase
 
-Requires ArcGIS Pro, [correctly placed st_geometry.dll](https://pro.arcgis.com/en/pro-app/latest/help/data/geodatabases/manage-postgresql/setup-geodatabase-postgresql-windows.htm), ESRI keycodes file, and a connection using the details from above. 
-
-Enabling the geodatabase may require several minutes.
+Requires ArcGIS Pro, ESRI keycodes file, and a connection using the details from above. Enabling the geodatabase may require several minutes
+and then we'll run some tests to make sure we are good.
 
 ```bat
 > set SDEFILE=C:\xxx\sde.sde
