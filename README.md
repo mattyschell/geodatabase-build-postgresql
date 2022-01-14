@@ -60,3 +60,18 @@ $ export PGPASSWORD=PostGisIsMyDatabae!
 $ export PGHOST=host.postgres.database.xxx.yyy
 $ ./teardown.sh $TARGETDATABASE
 ```
+
+
+## Create a Geodatabase User
+
+If the user already exists on the server this will fail harmlessly and continue to schema setup on the indicated database.
+
+```shell
+$ export TARGETUSER=brooklyn
+$ export TARGETPASSWORD=SpreadLoveItsTheBrooklynWay
+$ export PGDATABASE=devtestdb
+$ export PGUSER=adminuser@host
+$ export PGPASSWORD=PostGisIsMyDatabae!
+$ export PGHOST=host.postgres.database.xxx.yyy
+$ ./createuser.sh 
+```
