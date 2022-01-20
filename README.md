@@ -10,7 +10,7 @@ We will create an ESRI Enterprise Geodatabase on PostgreSQL. Friends, this our E
 * Create an sde schema on the database
 * Create the ESRI enterprise geodatabase on the PostgreSQL database
 
-## Set Up Database 
+## Set Up Database and Test That We Are Geodatabase-ready
 
 ```shell
 $ export TARGETDATABASE=devtestdb

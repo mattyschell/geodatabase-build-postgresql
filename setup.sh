@@ -21,6 +21,9 @@ if [ $PGHOST = 'localhost' ]; then
 else
 	psql -t -v v1=$sdepwd -f ./src/main/users_azure.sql
 fi
+export PGADMINUSER=$PGUSER
 export PGUSER=$sdeloginuser
 psql -t -f ./src/main/schema.sql
+export PGUSER=$PGADMINUSER
+./src/test/run-db-tests.sh 
 
