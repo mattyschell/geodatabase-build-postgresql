@@ -61,7 +61,6 @@ $ export PGHOST=host.postgres.database.xxx.yyy
 $ ./teardown.sh $TARGETDATABASE
 ```
 
-
 ## Create a Geodatabase User
 
 If the user already exists on the server this will fail harmlessly and continue to schema setup on the indicated database.

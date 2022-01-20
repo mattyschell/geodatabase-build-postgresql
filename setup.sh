@@ -1,4 +1,8 @@
 #!/bin/bash
+# unpublished st_geomtry option for testing
+# if Y you must move specific st_geometry.dll 
+# to ..\PostgreSQL\xx\lib
+export RANSOMGEOMS=Y
 # verify we have a database target
 if [[ -z "$1" ]]; then
    echo "missing input variable database name"
@@ -17,7 +21,11 @@ export PGDATABASE=$database
 psql -t -f ./src/main/database.sql
 sdepwd=$PGPASSWORD
 if [ $PGHOST = 'localhost' ]; then
-	psql -t -v v1=$sdepwd -f ./src/main/users_local.sql
+    if [ $RANSOMGEOMS = 'N' ]; then
+	    psql -t -v v1=$sdepwd -f ./src/main/users_local.sql
+    else
+        psql -t -v v1=$sdepwd -f ./src/main/users_local_stgeom.sql
+    fi
 else
 	psql -t -v v1=$sdepwd -f ./src/main/users_azure.sql
 fi

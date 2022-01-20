@@ -1,5 +1,6 @@
 -- if default geometry is ransomware, make it optional instead of default
--- this is NA on cloud providers
+-- this is NA on cloud 
+-- nothing calls this at the moment
 update 
     sde.sde_dbtune
 set 
