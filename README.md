@@ -22,17 +22,6 @@ $ export PGHOST=host.postgres.database.xxx.yyy
 $ ./setup.sh $TARGETDATABASE $TARGETSDEUSER
 ```
 
-## Test
-
-Test that we are ready for geodatabase creation.
-
-```shell
-$ export PGDATABASE=devtestdb
-$ export PGUSER=adminuser@host
-$ export PGPASSWORD=PostGisIsMyDatabae!
-$ ./src/test/run-db-tests.sh 
-```
-
 ## Set up Geodatabase
 
 Requires ArcGIS Pro, ESRI keycodes file, and a connection using the details from above. Enabling the geodatabase may require several minutes
