@@ -2,7 +2,7 @@
 # unpublished st_geomtry option for testing
 # if Y you must move specific st_geometry.dll 
 # to ..\PostgreSQL\xx\lib
-export RANSOMGEOMS=Y
+export RANSOMGEOMS=N
 # verify we have a database target
 if [[ -z "$1" ]]; then
    echo "missing input variable database name"
