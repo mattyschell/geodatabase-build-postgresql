@@ -19,13 +19,15 @@ $ export PGDATABASE=postgres
 $ export PGUSER=adminuser@host
 $ export PGPASSWORD=PostGisIsMyDatabae!
 $ export PGHOST=host.postgres.database.xxx.yyy
+$ export PGSSLMODE=require
 $ ./setup.sh $TARGETDATABASE $TARGETSDEUSER
 ```
 
 ## Set up Geodatabase
 
-Requires ArcGIS Pro, ESRI keycodes file, and a connection using the details from above. Enabling the geodatabase may require several minutes
-and then we'll run some tests to make sure we are good.
+If not already done, create a user environment variable *PGSSLMODE* with value *require*. Then from ArcCatalog or ArcGIS Pro create an sde.sde file with the details from above.
+
+The script below requires the sde.sde file, ArcGIS Pro, and an ESRI keycodes file. Enabling the geodatabase may require several minutes and then we'll run some tests to make sure that we are good.
 
 ```bat
 > set SDEFILE=C:\xxx\sde.sde
@@ -34,6 +36,7 @@ and then we'll run some tests to make sure we are good.
 > set PGUSER=sde@host
 > set PGPASSWORD=PostGisIsMyDatabae!
 > set PGHOST=host.postgres.database.xxx.yyy
+> set PGSSLMODE=require
 > enablegdb.bat
 ```
 
@@ -47,6 +50,7 @@ $ export PGDATABASE=postgres
 $ export PGUSER=adminuser@host
 $ export PGPASSWORD=PostGisIsMyDatabae!
 $ export PGHOST=host.postgres.database.xxx.yyy
+$ export PGSSLMODE=require
 $ ./teardown.sh $TARGETDATABASE
 ```
 
@@ -61,5 +65,6 @@ $ export PGDATABASE=devtestdb
 $ export PGUSER=adminuser@host
 $ export PGPASSWORD=PostGisIsMyDatabae!
 $ export PGHOST=host.postgres.database.xxx.yyy
+$ export PGSSLMODE=require
 $ ./createuser.sh 
 ```
